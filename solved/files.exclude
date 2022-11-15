@@ -1,0 +1,8 @@
+"files.exclude" : {
+    "1406.cpp": true,
+    "10773.cpp":true,
+    "10808.c":true,
+    "*.html": true,
+    "build/*": true
+}
+//여기다가 "파일명" : true 하면 된다
