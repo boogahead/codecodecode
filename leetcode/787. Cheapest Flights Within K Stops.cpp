@@ -23,6 +23,6 @@ class Solution {
             }
         }
         if(table[k+1][dst]==INT_MAX)return -1; //cannot be reached
-        return table[k+1][dst];
+        return table[k+1][dst]; 
     }
 };
