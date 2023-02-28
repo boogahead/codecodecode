@@ -21,7 +21,7 @@ public:
         if(table[tmp]==1){answer.push_back(root);}
         table[tmp]++;
         return tmp;
-    }
+    } 
     vector<TreeNode*> findDuplicateSubtrees(TreeNode* root) {
         unordered_map<string,int> table;
         dfs(root,table);
