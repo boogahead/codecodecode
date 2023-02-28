@@ -25,6 +25,6 @@ public:
     vector<TreeNode*> findDuplicateSubtrees(TreeNode* root) {
         unordered_map<string,int> table;
         dfs(root,table);
-        return answer;
+        return answer; 
     }
 };
