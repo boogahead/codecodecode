@@ -1,0 +1,25 @@
+-- 코드를 입력하세요
+(select 
+    DATE_FORMAT(SALES_DATE,'%Y-%m-%d') as SALES_DATE,
+    PRODUCT_ID,
+    NULL AS USER_ID, /*union 했을때 null 처리 위해 이렇게 함*/
+    SALES_AMOUNT
+ from
+    OFFLINE_SALE
+ where 
+    YEAR(SALES_DATE)=2022
+    AND MONTH(SALES_DATE)=3
+)
+UNION /*다 합쳐준다*/
+(SELECT
+    DATE_FORMAT(SALES_DATE,'%Y-%m-%d') as SALES_DATE,
+    PRODUCT_ID,
+    USER_ID,
+    SALES_AMOUNT
+ FROM
+    ONLINE_SALE
+ where 
+    YEAR(SALES_DATE)=2022
+    AND MONTH(SALES_DATE)=3
+)
+ORDER BY SALES_DATE,PRODUCT_ID,USER_ID
