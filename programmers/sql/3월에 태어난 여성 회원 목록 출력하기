@@ -1,0 +1,17 @@
+-- 코드를 입력하세요
+SELECT 
+    MEMBER_ID,
+    MEMBER_NAME,
+    GENDER,
+    DATE_FORMAT(DATE_OF_BIRTH,'%y-%M-%D') AS DATE_OF_BIRTH 
+    /*
+    date format 으로 마음대로 병경 가능
+    %Y 을 쓰면 92 이렇게 나오고 %y 쓰면 1992로 나옴
+    %M 을 쓰면 March 이렇게 나오고 %m 쓰면 03으로 나옴
+    %D 을 쓰면 12th 이렇게 나오고 %d 쓰면 12이렇게 나옴
+    */
+FROM MEMBER_PROFILE
+WHERE MONTH(DATE_OF_BIRTH)=3 
+      AND TLNO
+      AND GENDER='W'
+ORDER BY MEMBER_ID ASC
