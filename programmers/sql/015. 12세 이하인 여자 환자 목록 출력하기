@@ -1,0 +1,23 @@
+-- 코드를 입력하세요
+/*
+https://school.programmers.co.kr/learn/courses/30/lessons/132201
+IF STATEMENT: 
+IF(TLNO IS NULL,'NONE',TLNO)
+TLNO IS NULL : TLNO가 NULL 이면
+'NONE' : 을 리턴하도록
+TLNO : NULL 아니면 그냥 TLNO 리턴할것
+*/
+SELECT 
+    PT_NAME,
+    PT_NO,
+    GEND_CD,
+    AGE,
+    IF(TLNO IS NULL,'NONE',TLNO)AS TLNO
+FROM 
+    PATIENT
+WHERE 
+    AGE<=12
+    AND GEND_CD='W'
+ORDER BY 
+    AGE DESC,
+    PT_NAME ASC
