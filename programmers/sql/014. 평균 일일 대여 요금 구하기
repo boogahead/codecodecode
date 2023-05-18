@@ -1,0 +1,13 @@
+-- 코드를 입력하세요
+/*
+https://school.programmers.co.kr/learn/courses/30/lessons/151136
+
+ROUND ( 숫자 , 0 ) : 소수 첫째자리에서 반올림
+ROUND ( 숫자 , 1 ) : 소수 둘째자리에서 반올림
+SO ON
+*/
+SELECT
+    ROUND(AVG(DAILY_FEE),0) AS AVERAGE_FEE
+FROM CAR_RENTAL_COMPANY_CAR
+WHERE 
+    CAR_TYPE='SUV'
