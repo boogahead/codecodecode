@@ -1,0 +1,20 @@
+-- 코드를 입력하세요
+/*
+https://school.programmers.co.kr/learn/courses/30/lessons/131536
+
+GROUP BY USER_ID , PRODUCT_ID : USER_ID PRODUCT_ID 합쳐서 USER_ID로 합침. (맨앞으로 합쳐진다고 보면 됨)
+그래서 밑에서 HAVING COUNT(USER_ID) 해서 2이상인지 확인 가능한거 ( 이미 USER ID로 합쳐놓았으니까 )
+COUNT 같은거 쓰려면 HAVING 써야지 WHERE 쓰면 안된다
+
+WHERE 은 GROUP BY 하기 전에 사용하는거고
+HAVING 은 GROUP BY 한 뒤에 사용하는것이다
+*/
+SELECT
+    USER_ID,
+    PRODUCT_ID
+FROM ONLINE_SALE
+GROUP BY USER_ID,PRODUCT_ID
+HAVING COUNT(USER_ID)>=2
+ORDER BY 
+    USER_ID,
+    PRODUCT_ID DESC
