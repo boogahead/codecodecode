@@ -1,0 +1,25 @@
+/*https://school.programmers.co.kr/learn/courses/30/lessons/157340*/
+SELECT 
+    CAR_ID,
+    MAX(CASE WHEN '2022-10-16' BETWEEN DATE_FORMAT(START_DATE,'%Y-%m-%d') AND DATE_FORMAT(END_DATE,'%Y-%m-%d')
+    THEN '대여중'
+    ELSE '대여 가능'
+    END) AS AVAILABILITY
+    /*
+    MAX 사용이유 : 가장 마지막 날짜를 보여야하기때문
+    CASE WHEN
+    THEN
+    ELSE
+    THEN
+    ELSE
+    .
+    .
+    .
+    END 로 적는다
+    */
+FROM 
+    CAR_RENTAL_COMPANY_RENTAL_HISTORY
+GROUP BY 
+    CAR_ID
+ORDER BY 
+    CAR_ID DESC
