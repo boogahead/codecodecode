@@ -1,0 +1,16 @@
+/*
+https://school.programmers.co.kr/learn/courses/30/lessons/131530
+*/
+SELECT
+    (TRUNCATE(PRICE/10000,0)*10000)AS PRICE_GROUP,
+    COUNT(PRODUCT_ID) AS PRODUCTS
+FROM PRODUCT
+GROUP BY TRUNCATE(PRICE/10000,0)*10000
+ORDER BY PRICE_GROUP
+/*
+ROUND(345.56,0) : 소수 첫째자리에서 반올림 ->345
+ROUND(345.56,1) : 소수 둘째자리에서 반올림 ->345.6
+
+TRUNCATE(345.56,0) : 소수 첫째자리 버림 ->345
+TRUNCATE(345.56,1) : 소수 둘째자리 버림 -> 345
+*/
