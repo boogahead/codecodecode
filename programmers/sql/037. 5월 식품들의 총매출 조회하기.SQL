@@ -1,0 +1,22 @@
+/*
+https://school.programmers.co.kr/learn/courses/30/lessons/131117
+*/
+SELECT
+    ORD.PRODUCT_ID,
+    PRO.PRODUCT_NAME,
+    SUM(PRO.PRICE*ORD.AMOUNT) AS TOTAL_SALES
+FROM FOOD_ORDER ORD 
+JOIN FOOD_PRODUCT PRO
+    ON ORD.PRODUCT_ID=PRO.PRODUCT_ID
+WHERE 
+    ORD.PRODUCE_DATE LIKE '2022-05%'
+GROUP BY ORD.PRODUCT_ID
+ORDER BY TOTAL_SALES DESC,
+    PRO.PRODUCT_ID ASC
+
+/*
+내 생각인데
+조건이 들어간 테이블을 호출해야할때 FROM 해당 테이블을 하고
+
+그외의 테이블을 JOIN으로 합쳐줘야하는것같음
+*/
