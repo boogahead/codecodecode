@@ -1,0 +1,17 @@
+class Solution {
+public:
+    double yes(double x, long long n){
+        if(n==0)return 1.0;
+        else if(n<0)return 1/yes(x,-1*n);
+        //cout<<x<<"\n";
+        if(n%2){
+            return x*yes(x*x,(n-1)/2);
+        }
+        else{
+            return yes(x*x,n/2);
+        }
+    }
+    double myPow(double x, int n) {
+        return yes(x,(long long)n);
+    }
+};
